@@ -16,7 +16,7 @@
 - https://github.com/run-as-root/magento2-message-queue-retry
 - https://github.com/ho-nl/magento2-ReachDigital_BetterIndexer
 
-# Note on database changes
+## Note on database changes
 ** By Jelle**
 https://github.com/magento/magento2/commit/03892714472bd141b37bb29c7b658014beaa5233
 for context: this helps with quicker deployments when you need setup:upgrade for database changes. previously it would drop all db triggers and recreate them, but this was fixed in 2.4.6
@@ -30,7 +30,7 @@ for context: this helps with quicker deployments when you need setup:upgrade for
 - https://www.dragonflydb.io/ is a multi threaded plug-in replacement for redis too
 - both redis alternatives are fully compatible with the redis API and can be used with Magento
 
-# Checkout
+## Checkout
 **Notes by Fabian**
 
 HTMX: https://htmx.org/ 
