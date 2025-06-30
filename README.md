@@ -93,4 +93,27 @@ Extensions
 Development
 - Don't use app/code, create proper extensions
 - https://www.yireo.com/blog/2019-05-10-local-composer-development-with-magento2
-```
+
+## BasicRUM
+**Notes by Tsvetan**
+
+Group 1:
+● Annotations that can indicate when a customer released a new version of their
+webshop.
+● A summary widget that will show how performance compares between last week and
+the week before last week.
+● Show more data like DNS, redirect, connect, response time.
+
+Group 2:
+● Annotations + 2.
+● Magento specific filters +3
+○ Page groups: Product, Category, Home, Cart, Checkout …
+● Control to change the percentile.
+● Show overview/summary per domain when someone monitors multiple domains.
+● Third party script impact.
+● Server-Timing headers.
+● Varnish hit ratio.
+● Minimize even more the boomerang js monitoring library. Today we load 30 KB of js. We can go to 20-25 KB.
+
+
+
