@@ -1,5 +1,41 @@
 # MageUnconference NL 2025 notes
 
+## Todo of converting photos into textual notes
+- Jeroen - What sucks about Magento Hosting
+- Fabian - AI in agencies
+- Louis - DB locks
+- Jeroen - Surviving Black Friday
+
+## Random links
+- https://gamma.app/docs/Unconference-Bulk-AI-Automation-for-ecommerce-7zt94txqbhl37ay
+- https://www.npmjs.com/package/@elgentos/magento2-playwright
+- https://github.com/elgentos/magento2-playwright
+- https://github.com/rajeev-k-tomy/magento-data
+- https://github.com/MageTested/mage-unconference-e2e-pipeline
+- https://github.com/yireo/Yireo_LokiAdminComponents
+- https://github.com/run-as-root/magento2-message-queue-retry
+- https://github.com/ho-nl/magento2-ReachDigital_BetterIndexer
+
+# Note on database changes
+** By Jelle**
+https://github.com/magento/magento2/commit/03892714472bd141b37bb29c7b658014beaa5233
+for context: this helps with quicker deployments when you need setup:upgrade for database changes. previously it would drop all db triggers and recreate them, but this was fixed in 2.4.6
+
+## redis, valkey and dragonfly
+**Notes by Chris and Nils**
+
+- https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/system-requirements states that  in Magento 2.4.7-p6 Valkey 8 can be used as a drop-in replacement for redis. Starting from 2.4.8 redis is erased from the list
+- reasons: redis changed to another license and it seems like it annot be used by some cloud providers without fees anxmore (Adobe Commerce Cloud)
+- https://valkey.io/ (fork of redis, backed by Amazon)
+- https://www.dragonflydb.io/ is a multi threaded plug-in replacement for redis too
+- both redis alternatives are fully compatible with the redis API and can be used with Magento
+
+# Checkout
+**Notes by Fabian**
+
+HTMX: https://htmx.org/ 
+Magento module for HTMX: https://github.com/magehx/htmx-actions
+
 ## Low TTFB for uncached Pages
 **Notes by Max**
 
