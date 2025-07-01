@@ -151,5 +151,17 @@ Group 2:
 ● Varnish hit ratio.
 ● Minimize even more the boomerang js monitoring library. Today we load 30 KB of js. We can go to 20-25 KB.
 
+## `composer.lock` in git
+**Notes by Simon Sprankel**
 
+Changes in `composer.lock` often lead to merge conflicts. When you work on a branch with `composer.lock` changes, and you want to merge `main`, which also has `composer.lock` changes, you directly get a conflict. There are pretty much two ways people solve this:
 
+1. Use PhpStorm Smart Merge to merge all non-conflicting changes and then run `composer update --lock`.
+2. Checkout the main version of `composer.lock` and re-apply the changes done in the respective branch.
+
+According to Nils from Private Packagist / Composer, only 2 is the right thing to do, because 1 can lead to invalid dependencies. Running `composer update --lock` should at least make issues obvious, but 2 is definitely preferable.
+
+Most of the time, the conflict is just due to the checksum. Hence, we had quite some discussion how this could be solved and came up with two ideas:
+
+1. Remove the checksum completely: Is this possible? Why is it there? Most probably security. However, when `composer.lock` is committed to git, does it really serve a purpose? Nils shared a [link to a presentation](https://naderman.de/slippy/slides/2025-04-03-SymfonyLive-Berlin-composer-lock-demystified.pdf), which tries to explain why the checksum is important.
+2. Create a Composer plugin / git hook, which executes option 1 described above or solves the conflict in another, smart way. Nils said that he thought about this a few times already, but did not find a solution yet. He offered to participate in working on something like this with feedback / review.
