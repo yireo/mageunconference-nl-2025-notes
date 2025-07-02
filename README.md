@@ -15,6 +15,7 @@
 - https://github.com/yireo/Yireo_LokiAdminComponents
 - https://github.com/run-as-root/magento2-message-queue-retry
 - https://github.com/ho-nl/magento2-ReachDigital_BetterIndexer
+- https://github.com/OpenForgeProject/mageforge
 
 ## Note on database changes
 ** By Jelle**
