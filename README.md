@@ -3,7 +3,6 @@
 ## Todo of converting photos into textual notes
 - Jeroen - What sucks about Magento Hosting
 - Fabian - AI in agencies
-- Louis - DB locks
 - Jeroen - Surviving Black Friday
 
 ## Random links
@@ -165,3 +164,26 @@ Most of the time, the conflict is just due to the checksum. Hence, we had quite 
 
 1. Remove the checksum completely: Is this possible? Why is it there? Most probably security. However, when `composer.lock` is committed to git, does it really serve a purpose? Nils shared a [link to a presentation](https://naderman.de/slippy/slides/2025-04-03-SymfonyLive-Berlin-composer-lock-demystified.pdf), which tries to explain why the checksum is important.
 2. Create a Composer plugin / git hook, which executes option 1 described above or solves the conflict in another, smart way. Nils said that he thought about this a few times already, but did not find a solution yet. He offered to participate in working on something like this with feedback / review.
+
+## Database locks
+**Notes by Louis de Looze**
+
+Database locks can cause serious slowdowns or timeouts, especially during peak traffic or admin-heavy operations. Here’s what we talked about:
+- Server configuration can drastically affect lock performance -> talk with your hosting provider
+- Extra server resources are not a silver bullet
+- Many issues stem from badly written modules: long transactions, missing indexes, unnecessary table joins -> Use `SHOW ENGINE INNODB STATUS` and `SHOW PROCESSLIST` to identify blocked/locking queries
+- Killing specific internal MySQL processes is safer than restarting MySQL — avoids full downtime
+- There's always a trade-off between data consistency and performance -> Use async queues or deferred writes when strict consistency isn’t critical
+Everybody agreed that recent Magento improvements and faster Php have led to fewer DB locks in general -> update your old shops!
+
+## Queues
+**Sidetrack of database locks session**
+
+Magento’s queue system is powerfull, but needs to be used wisely:
+- RabbitMQ is often overkill unless you're processing large volumes or doing real-time 3rd-party integration -> extra server load
+- MView uses DB triggers -> often good enough but can lead to database locks as discusses above (full circle moment)
+    - Apparently Has issues with duplication, which would be interesting to have a look at (someone worked on this and did deduplication application side, cannot find anything about this so feel free to add resources...)
+    - Could we run indexing through RabbitMQ? Any benefits?
+- Use queue:consumers:list and check queue_status table if all run fine -> some modules depend on this!
+
+
