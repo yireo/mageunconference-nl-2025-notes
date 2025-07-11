@@ -1,10 +1,5 @@
 # MageUnconference NL 2025 notes
 
-## Todo of converting photos into textual notes
-- Jeroen - What sucks about Magento Hosting
-- Fabian - AI in agencies
-- Jeroen - Surviving Black Friday
-
 ## Random links
 - https://gamma.app/docs/Unconference-Bulk-AI-Automation-for-ecommerce-7zt94txqbhl37ay
 - https://www.npmjs.com/package/@elgentos/magento2-playwright
