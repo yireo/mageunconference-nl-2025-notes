@@ -187,4 +187,85 @@ Magento’s queue system is powerfull, but needs to be used wisely:
     - Could we run indexing through RabbitMQ? Any benefits?
 - Use queue:consumers:list and check queue_status table if all run fine -> some modules depend on this!
 
+## What sucks about Magento Hosting
+**By Jeroen**
 
+- Missing Magento knowledge, too generic
+- Marketing is too focused on merchants, instead of devs
+- Restricted privileges, devs should be able to read configs, logs, stats
+- OS upgrades: Timing, IP changes, communication
+- Scaling (dynamic)
+- No insight, no transparency, blackbox
+- No office backups
+- Separation dev & hosting, not clear
+- No infrastructure as code for devs
+- Managing URL Rewrites easily
+- Temp environment easy setup
+- Dev env is too expensive or not comparable
+- Dev toolki magic performance improvement
+	- Image optimisation
+	- TTFB
+- Integrated CDN
+
+## AI in agencies
+**By Fabian**
+
+
+- Hostyourai.com
+- Digital Ocean Gen M platform
+- Self-hosting
+	- Elgentos LLM (Llama 3.3)
+	- Models: Claude Sonnet, Augment, GPT-4.0
+- Software
+	- Aider (CLI)
+	- Cursor (VS Code)
+	- Continue (PHPStorm)
+	- ProxyAI (PHPStorm)
+	- Augment
+	- Goose
+	- Codex
+- Use cases
+	- Code generation, review own code
+	- Figma to Tailwind
+	- Pull Requests for simple taks like translations (and devs approve?)
+	- Gherkin scenarios + Playwright Tests
+	- Writing issues
+- Business logic without AI needs implicit knowledge
+- More budget for complex tasks
+- Juniors need guidance, replacing devs with AI is dangerous
+
+## Surviving Black Friday
+**By Jeroen**
+
+- Scale up hardware
+- DB locking (stock): Disable updates
+- API calls: Disable updates
+- No changes to code and content
+- Cloudflare (can cache catalogue pages)
+- No cache flush
+- Do a small action earlier
+- Check for hits on PHP/backend for category pages
+- Work around for `static.php` and `media.php`
+- Watch out with expensive `404.php`
+- Bypass Varnish for content (dynamic, media, static)
+
+## Stay up To date with tech
+**By Alex**
+
+- Regular meetings (agency / events)
+- Bytes.dev newsletter
+- Josh W Comeau.com
+- YouTube channel
+- Blog / Tutorials
+- Sub Reddit
+- Fireship
+- Programmer
+- Discord / Slack
+- Awesome lists (obsolete?)
+- StateOfCss.com
+- Web.dev
+- Codepen / codesandbox
+- Magedispatch newsletter
+- Sansec security
+- GitHub (trending page)
+- Newsletter
