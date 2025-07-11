@@ -17,7 +17,7 @@
 - https://github.com/OpenForgeProject/mageforge
 
 ## Note on database changes
-** By Jelle**
+**By Jelle**
 https://github.com/magento/magento2/commit/03892714472bd141b37bb29c7b658014beaa5233
 for context: this helps with quicker deployments when you need setup:upgrade for database changes. previously it would drop all db triggers and recreate them, but this was fixed in 2.4.6
 
